@@ -1,0 +1,21 @@
+{
+  "name": "Offering-Data-Generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "user-onboarding": "export NODE_OPTIONS=--no-deprecation && node scripts/user-onboarding-creator.script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/axios": "^0.14.0",
+    "@types/faker": "^6.6.9"
+  }
+}
