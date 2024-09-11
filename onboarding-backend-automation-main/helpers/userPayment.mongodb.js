@@ -21,10 +21,32 @@ async function updateUserPayments() {
       { 'kycAMLChecks.northCapital.success': { $ne: true } },
       {
         $set: {
-          'kycAMLChecks.northCapital.kycResultKey': 'result.match',
-          'kycAMLChecks.northCapital.kycResultMessage': 'ID Located',
-          'kycAMLChecks.northCapital.success': true,
-          'kycAMLChecks.northCapital.notes': 'Manually Updated via Script'
+          'kycAMLChecks.northCapital': {
+            statusCode: "101",
+            statusDesc: "Ok",
+            kyc: {
+              response: {
+                "id-number": "5657473678",
+                "summary-result": {
+                  key: "id.success",
+                  message: "PASS"
+                },
+                results: {
+                  key: "result.match",
+                  message: "ID Located"
+                },
+                qualifiers: {
+                  qualifier: {
+                    key: "resultcode.newer.record.found",
+                    message: "Newer Record Found"
+                  }
+                },
+                idnotescore: "0"
+              },
+              kycstatus: "Auto Approved",
+              amlstatus: "Auto Approved"
+            }
+          }
         }
       }
     );
